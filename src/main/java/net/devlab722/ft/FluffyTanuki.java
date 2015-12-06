@@ -29,30 +29,17 @@ public class FluffyTanuki {
     private void readLines(BufferedReader r) throws IOException {
         String line;
         while ((line = r.readLine()) != null) {
-            readLine(line);
+            readAndPrintLine(line);
             waitForDuration(endOfLineWaitTimeMs);
         }
     }
 
-    private void readLine(String line) {
-        String[] splitString = line.split("\\s+");
-        printWordsAsALine(splitString);
-    }
-
-    private void printWordsAsALine(String[] splitString) {
-        String spaceIfNeeded;
-        for (int i = 0; i < splitString.length; i++) {
-            if (i != splitString.length - 1) {
-                spaceIfNeeded = " ";
-            } else {
-                spaceIfNeeded = "";
-            }
-            printCharsOfWord(splitString[i] + spaceIfNeeded);
-        }
+    private void readAndPrintLine(String line) {
+        printChars(line);
         System.out.println();
     }
 
-    private void printCharsOfWord(String word) {
+    private void printChars(String word) {
         word.chars().forEach(c -> {
             System.out.print((char) c);
             waitForDuration(getRandomWaitTimeMsBetweenChars());
