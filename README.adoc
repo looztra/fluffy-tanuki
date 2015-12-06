@@ -1,0 +1,9 @@
+= Fluffy Tanuki
+
+== What?
+
+Read text from a text file and simulate the keyboard strikes made by a human being
+
+== FAQ
+
+* why the name *_Fluffy Tanuki_*? : because I was out of inspiration and github proposed this one
