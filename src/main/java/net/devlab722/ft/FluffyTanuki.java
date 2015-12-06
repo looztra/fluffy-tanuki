@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class FluffyTanuki {
@@ -23,9 +24,13 @@ public class FluffyTanuki {
 
     void readInputStream(InputStream inputStream) throws IOException {
         BufferedReader r = new BufferedReader(new InputStreamReader(inputStream));
+        printHeader();
         readLines(r);
     }
 
+    private void printHeader() {
+        System.out.println();
+    }
     private void readLines(BufferedReader r) throws IOException {
         String line;
         while ((line = r.readLine()) != null) {
@@ -59,7 +64,12 @@ public class FluffyTanuki {
     }
 
     public static void main(String[] args) throws IOException {
+        if( args.length == 0 ) {
+            System.out.println("You failed, please provide a file to read mate!");
+            System.exit(1);
+        }
+        InputStream stream = new FileInputStream(new File(args[0]));
         FluffyTanuki ft = new FluffyTanuki(400L, 60L, 70L);
-        ft.readInputStream(new FileInputStream(new File("mail-presentation-draft.txt")));
+        ft.readInputStream(stream);
     }
 }
