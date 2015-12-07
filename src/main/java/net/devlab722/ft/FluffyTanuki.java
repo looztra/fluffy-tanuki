@@ -68,7 +68,7 @@ public class FluffyTanuki {
             System.exit(1);
         }
         InputStream stream = new FileInputStream(new File(args[0]));
-        FluffyTanuki ft = new FluffyTanuki(400L, 60L, 70L);
+        FluffyTanuki ft = new FluffyTanuki(400L, 50L, 60L);
         ft.readInputStream(stream);
     }
 }
