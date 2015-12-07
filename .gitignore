@@ -1,3 +1,5 @@
+*.txt
+asciinema
 ### OSX template
 .DS_Store
 .AppleDouble
